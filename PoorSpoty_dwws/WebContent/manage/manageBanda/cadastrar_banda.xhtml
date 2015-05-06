@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/resources/decorator_usuario.xhtml">
+
+	<ui:define name="title">Cadastro e listagem de bandas</ui:define>
+	<ui:define name="cabecalhoUsuario">	
+		<div id="boxAuxCabUsuario">
+				<div id="logoUsuario">
+					<ul>
+						<li> <img src="#{facesContext.externalContext.requestContextPath}/resources/imagens/logo.png" /> </li>	
+						<li> <h1> PoorSpoty - Cadastro e listagem de bandas</h1> </li>
+					</ul>
+				</div>
+				
+					
+					<div id="menuCabecalhoUsuario">
+						<ul>							
+							<li> <a href="#"> Sair </a> </li>								
+						</ul>	
+					</div>				
+			</div>
+	</ui:define>
+
+	<ui:define name="principalUsuario">
+		<div class="boxManage">
+			<h:form class="formLogin">
+				<p:messages autoUpdate="true"/>
+			
+				<p> Nome: </p> 
+				<p:inputText value="#{manageBanda.banda.nome}" 
+				required="true"
+				requiredMessage="Digite uma banda"
+				/>
+				
+				<p> Estilo Musical: </p>
+				 <p:selectOneMenu value="#{manageBanda.estilo}"
+				  required="true"
+				  requiredMessage="Escolha um estilo">
+					<f:selectItems value="#{manageBanda.estilos}" />
+				</p:selectOneMenu>			
+				
+				<br></br><br></br>
+				<p:commandButton class="botao" action="#{manageBanda.salvar}" value="salvar" icon="ui-icon-check"/>				
+				
+			</h:form>
+		</div>
+
+	</ui:define>
+	
+	<ui:define name="parteInferiorUsuario">	
+	</ui:define>
+</ui:composition>

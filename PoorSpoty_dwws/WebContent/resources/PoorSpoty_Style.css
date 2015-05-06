@@ -1,0 +1,482 @@
+﻿@charset "utf-8";
+/* CSS Reset*/
+
+/* Colocando a fonte no site */
+@font-face {
+     font-family: PoorSpoty;
+     src: url(fonte/sansation.ttf);
+}
+
+
+*{
+	font-family: Arial, Tahoma, Verdana;
+	font-size:14px;
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	position: relative;
+}
+
+a{
+	color:#000;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+ul, ol{
+	list-style:none;
+}
+
+body{
+	background:#FFF;
+}
+
+a img{
+	border: none;
+}
+
+/* Fim CSS reset */
+
+/* Página Principal */
+#boxPrincipal{
+	height:auto;
+    min-height:100%;
+	/*overflow:hidden;*/
+	width: 500px;	
+	margin: 20px auto;
+	border: 1px #666 solid;	
+}
+
+#cabecalho{
+	height: 35px;
+	margin: 0 auto;
+	background: #eee;	
+	border-bottom: 2px #666 solid;	
+}
+
+#cabecalho li{
+	font-family: PoorSpoty;	
+	float: left;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+#cabecalho li a{
+	color: #2BAE52;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#cabecalho li a:hover{
+	text-decoration: underline;
+}
+
+#boxPrincipal h1{
+	font-family: PoorSpoty;
+	font-size: 60px;
+	font-weight: bold;
+	color: #669900;
+	text-align: center;	
+}
+
+#boxPrincipal h2{	
+	text-align: center;	
+	margin-top: 15px;	
+}
+
+#boxPrincipal h2 a{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;
+	color: #669900;
+	text-align: center;		
+}
+
+#boxPrincipal h2 a:hover{
+	color: #2BAE52;
+	text-decoration: underline;			
+}
+
+#boxPrincipal img{
+	margin-left: 125px;
+	margin-top: 30px;
+}
+
+#boxLogin{
+	height:auto;
+    min-height:100%;
+	width: 240px;
+	margin: 0 auto;	
+}
+
+#textoLogin p{
+	font-family: PoorSpoty;
+	font-size: 15px;	
+	text-align: justify;	
+	color: #669900;
+	display:block;
+	width: 400px;
+	margin-left: -75px;
+
+}
+
+.formLogin p span{
+	text-decoration: underline;	
+	padding-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: PoorSpoty;
+	color: #669900;
+}
+
+.formLogin p{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: PoorSpoty;
+	color: #669900;
+}
+
+.formLogin td{
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: PoorSpoty;
+	color: #669900;
+}
+
+.formLogin label{
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: PoorSpoty;
+	color: #669900;
+}
+
+.formLogin input{
+	background-color: #eee; 
+	font-size: 14px;
+	font-family: PoorSpoty;	
+	border:1px solid #666;
+	height: 25px;
+	color: #669900;
+}
+
+.formLogin a{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: PoorSpoty;
+	color: #669900;
+}
+
+.labelCadastro label{
+	color: #669900;
+	font-size: 14px;
+	font-family: PoorSpoty;	
+	font-weight: bold;
+}
+
+.boxDecricao{
+	background-color: #eee; 
+	font-size: 14px;
+	font-family: PoorSpoty;	
+	border:1px solid #666;	
+	color: #669900;
+	width: 320px;
+	height: 150px;
+}
+
+.botao{
+	font-weight: bold;
+	width: 120px;
+	color: #669900;
+	font-weight: bold;
+	margin-top: 5px;	
+}
+
+.botao:hover{
+	cursor: pointer;
+}
+
+/* #################### Decorator do usuário ######################## */
+
+#cabecalhoUsuario{
+	height: 80px;	
+	border-bottom: 1px solid #ccc;
+}
+
+#logoUsuario{
+	float: left;
+}
+
+#menuCabecalhoUsuario{
+	float: right;
+}
+
+#boxAuxCabUsuario{
+	width: 900px;
+	height: 80px;	
+	margin: 0 auto;	
+}
+
+#cabecalhoUsuario ul li{
+	float: left;
+	padding-left: 20px;
+}
+
+#cabecalhoUsuario ul li:first-child{	
+	padding-left: 0px;
+}
+
+#cabecalhoUsuario img{
+	height: 60px;
+	width: 60px;
+	margin-top: 10px;
+}
+
+#logoUsuario h1{
+	font-family: PoorSpoty;
+	font-size: 30px;
+	font-weight: bold;
+	color: #669900;
+	line-height: 80px;		
+}
+
+#menuCabecalhoUsuario li a{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;
+	color: #669900;
+	line-height: 80px;	
+}
+
+#boxPrincipalUsuario{
+	width: 1000px;
+	height:auto;
+    min-height:100%;
+    margin: 0 auto;      	
+}
+
+.textoUsuario{
+	width: 800px;
+	height:auto;
+    min-height:100%;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+.textoUsuario p{
+	font-family: PoorSpoty;
+	font-size: 18px;	
+	color: #669900;
+	text-align: justify;
+	display: block;
+	padding-top: 20px;
+}
+
+.textoUsuario h1{
+	font-family: PoorSpoty;
+	font-size: 50px;
+	font-weight: bold;
+	color: #669900;	
+}
+
+#dadosUsuario{
+	width: 550px;
+	height:auto;
+    min-height:100%;    
+    margin: 0 auto;         	
+}
+
+#dadosUsuario div{
+	float: left;	
+	margin-top: 30px;	
+    padding-left: 30px;	
+}
+
+#dadosUsuario div:first-child{
+    padding-left: 0px;	
+}
+
+#boxAvatar img{
+	border: 1px #ccc solid;
+	padding: 2px;
+	margin: 10px;
+}
+
+#boxDados li {
+	font-family: PoorSpoty;
+	font-size: 18px;	
+	color: #669900;		
+}
+
+#boxDados li span{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;	
+	color: #669900;		
+}
+
+#boxDados h2{
+	font-family: PoorSpoty;
+	font-size: 40px;
+	font-weight: bold;	
+	color: #669900;	
+	padding-bottom: 20px;	
+}
+
+.boxBorda{
+	height: 2px;	
+	border-bottom: 1px solid #ccc;	
+}
+
+.boxBordaClear{
+	height: 40px;	
+	border-bottom: 1px solid #ccc;
+	clear: both;
+}
+
+#boxRankings{
+	width: 490px;
+	height:auto;
+    min-height:100%;
+    margin: 0 auto;      
+}
+
+#boxRankings div{	
+	margin-top: 40px;
+	
+}
+
+#boxRankings h2{
+	font-family: PoorSpoty;
+	font-size: 40px;
+	font-weight: bold;	
+	color: #669900;	
+}
+
+#boxRankings ol{
+	list-style-type: decimal;
+	margin-left: 175px;
+}
+
+#boxRankings li{
+	font-family: PoorSpoty;
+	font-size: 18px;
+	color: #669900;	
+}
+
+#boxSugestao{
+	width: 260px;
+	height:auto;
+    min-height:100%;
+    margin: 0 auto;	
+}
+
+#boxSugestao a{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;		
+	color: #8BCE00;	
+	display: block;
+	margin-top: 40px;
+	width: 230px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #333;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #000;
+	
+}
+
+#boxSugestao a:hover{
+	text-decoration: none;
+	color: #fff;
+	background: #669900;
+}
+
+/* ######################## manages ######################### */
+.boxManage{
+	width: 650px;	
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.boxManageUsuario{
+	width: 950px;	
+	margin: 0 auto;
+	margin-top: 40px;	
+}
+
+.boxManage form, .boxManageUsuario form{
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+}
+
+.boxManage form p, , .boxManageUsuario form p{
+	padding-bottom: 10px;
+}
+
+.boxManage h2{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;	
+	color: #669900;	
+}
+
+.formCadsBanEst button{
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+}
+
+#linksAdmin a{
+	font-family: PoorSpoty;
+	font-size: 20px;
+	font-weight: bold;		
+	color: #8BCE00;	
+	display: block;
+	margin-top: 40px;
+	width: 230px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #333;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #000;
+	
+}
+
+#linksAdmin a:hover{
+	text-decoration: none;
+	color: #fff;
+	background: #669900;
+}
+
+#tabelaListarUsuario a, #tabelaListarEstilo a, #tabelaListarBanda a{
+	font-weight: bold;
+	background: #aaa;
+	padding: 3px;
+	border-radius: 5px;
+	color: #fff;
+	background: #669900;
+}
+
+#tabelaListarUsuario a:hover, #tabelaListarEstilo a:hover, #tabelaListarBanda a:hover{
+	text-decoration: none;
+	color: #8BCE00;
+	background: #333;
+}
+
+
+
+
+
+
+

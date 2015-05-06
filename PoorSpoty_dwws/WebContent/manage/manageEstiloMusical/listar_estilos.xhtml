@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/resources/decorator_usuario.xhtml">
+
+	<ui:define name="title">Cadastro e listagem de bandas</ui:define>
+	<ui:define name="cabecalhoUsuario">	
+		<div id="boxAuxCabUsuario">
+				<div id="logoUsuario">
+					<ul>
+						<li> <img src="#{facesContext.externalContext.requestContextPath}/resources/imagens/logo.png" /> </li>	
+						<li> <h1> PoorSpoty - Cadastro e listagem de bandas</h1> </li>
+					</ul>
+				</div>
+				
+					
+					<div id="menuCabecalhoUsuario">
+						<ul>							
+							<li> <a href="#"> Sair </a> </li>								
+						</ul>	
+					</div>				
+			</div>
+	</ui:define>
+	
+		<ui:define name="principalUsuario">
+
+		<div class="boxManage">
+
+			<p:dataTable id="tabelaListarEstilo" var="estiloMusical" value="#{manageEstiloMusical.estilosMusicais}" rows="10"
+	                         paginator="true"
+	                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+	                         rowsPerPageTemplate="5,10,15">
+			    <p:column headerText="Nome">
+			        <h:outputText value="#{estiloMusical.nome}" />
+			    </p:column>
+			    		    
+			    <p:column headerText="">
+			        <h:form class="formLogin">
+						<p:commandLink action="#{manageEstiloMusical.alterar}" value="Modificar" />
+					</h:form>
+			    </p:column>
+			    
+			    <p:column headerText="">
+			        <h:form class="formLogin">
+						<p:commandLink action="#{manageEstiloMusical.excluir}" value="Apagar">
+							<f:ajax render="tabelaListarEstilo" /> 
+						</p:commandLink>
+					</h:form>
+			    </p:column>			   
+			</p:dataTable>
+			
+			<br></br>
+			<br></br>		
+			
+			<h:form class="formCadsBanEst">
+				<p:commandButton class="botao" icon="ui-icon-plusthick" value="Cadastrar novo estilo" action="#{manageEstiloMusical.adicionar}" />
+			</h:form>
+		
+			<br></br>
+			<br></br>
+			<h:form class="formCadsBanEst">
+				<p:commandButton class="botao" icon="ui-icon-arrowthick-1-w" value="Voltar painel administração" action="/pag_admin/admin" />
+			</h:form>
+		
+		</div>
+		
+	</ui:define>
+
+	<ui:define name="parteInferiorUsuario">	
+	</ui:define>
+	
+</ui:composition>
