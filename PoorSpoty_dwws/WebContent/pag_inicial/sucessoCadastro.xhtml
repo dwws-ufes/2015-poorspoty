@@ -6,17 +6,20 @@
       xmlns:h="http://java.sun.com/jsf/html"
       template="/resources/decorator_login.xhtml">
       
-      <ui:define name="title">O que é</ui:define>      
+      <ui:define name="title">Cadastro realizado com sucesso</ui:define>      
       <ui:define name="login">
       	<div id="textoLogin">
 	      	<p>
-	      			O PoorSpoty é um sistema de recomendação de música e bandas. Nele vocês realizada
-	      			um cadastro gratuito informando sua idade, preferências, país, dentre outros. A partir do
-	      			momento em que possui uma conta, você receberá sugestões de novas músicas e bandas de acordo
-	      			com seu estilo. Além disso, você terá acesso a informações sobre suas bandas prediletas, como:
-	      			nome dos integrantes, discos, dentre outros. Cadastre-se no link abaixo.
+	      			<br></br>
+	      			Parabéns! Agora você faz parte do PoorSpoty. Volte a página de login para entrar no sistema
 	      	</p>      	
     	</div>    	
+      </ui:define>
+      
+      
+      <ui:define name="link_cadastro">   
+      	<h2> <a href="#{facesContext.externalContext.requestContextPath}"> Faça Login! </a></h2>
+      	   	 	
       </ui:define>
      
      

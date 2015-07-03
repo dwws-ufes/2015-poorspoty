@@ -1,17 +1,16 @@
 package br.PoorSpoty.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,19 +29,31 @@ public class Usuario implements Serializable{
 	private char sexo;
 	private String nick;
 	private String descricao;
+	private int tipo; /* 1 : Admin; 0 : Usuario Normal*/
+	private int avatar;
 	
 	@Temporal(TemporalType.DATE)
 	private Date dataNasc;
 	
-	@OneToMany(cascade = CascadeType.ALL)		
+	@ManyToMany	(fetch = FetchType.EAGER)
 	private List<Banda> bandas;// = new ArrayList<Banda>();
-	
-	@ManyToMany(cascade = CascadeType.ALL)	
+
+	@ManyToMany (fetch = FetchType.EAGER)
+	@JoinTable(name = "usuario_estilomusical_sim")
 	private List<EstiloMusical> estilos;// = new ArrayList<EstiloMusical>();
 	
-	@ManyToMany(cascade = CascadeType.ALL)	
+	@ManyToMany (fetch = FetchType.EAGER)
+	@JoinTable(name = "usuario_estilomusical_nao")
 	private List<EstiloMusical> estilosNao;// = new ArrayList<EstiloMusical>();
 
+	public int getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(int avatar) {
+		this.avatar = avatar;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -139,6 +150,14 @@ public class Usuario implements Serializable{
 		this.estilosNao = estilosNao;
 	}	
 	
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	public void printUsuario (){
 		System.out.println("Imprimindo usuaio:");
 		System.out.println(this.nome);
@@ -156,9 +175,10 @@ public class Usuario implements Serializable{
 		System.out.println("Bandas:");
 		for (int i=0; i<this.bandas.size(); i++){
 			this.bandas.get(i).printBanda();
-		}		
-		
+		}			
 		
 	}
+	
+	
 	
 }

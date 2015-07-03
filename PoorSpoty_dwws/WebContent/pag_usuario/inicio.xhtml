@@ -4,42 +4,43 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       template="/resources/decorator_usuario.xhtml">
       
       <ui:define name="title">Vamos ouvir algo novo?</ui:define>      
          	
-      <ui:define name="principalUsuario">
-      
+      <ui:define name="principalUsuario">      	 
       
       	<div id="dadosUsuario">
       		
       		<div id="boxAvatar">
-      			<img src="#{facesContext.externalContext.requestContextPath}/resources/imagens/masc/m8.jpg" />      		
+      			<img src="#{facesContext.externalContext.requestContextPath}/resources/imagens/avatar/#{auth.usuario.avatar}.jpg" align="left"/>      		
       		</div>
       		
       		<div id="boxDados">
       		
-      			<h2> Bem vindo getNome(); </h2>
+      			<h2> Bem vindo <h:outputText value="#{auth.usuario.getNome()}" /> </h2>
       			
       			<ul>
       				<li> 
-      					<span> Idade: </span> getIdade ();    				
+      					<span> Idade: </span> <h:outputText value="#{auth.getIdadeUsuario()}" />    				
       				</li>
       				
       				<li>
-      					<span> Banda prefida(s): </span> getBanda1 (); e getBanda2 ();       				
+      					<span>  Banda prefida(s): </span> <h:outputText value="#{auth.getBandasUsuario()}" />        				
       				</li>
       				
       				<li> 
-      					<span> Estilos que gosta: </span> getEstilosCurte ();    				
+      					<span> Estilos que gosta: </span> <h:outputText value="#{auth.getEstilosUsuario()}" />    				
       				</li>
       				
       				<li> 
-      					<span> Estilos que não gosta: </span> getEstilosNaoCurte ();
+      					<span> Estilos que não gosta: </span> <h:outputText value="#{auth.getEstilosNaoUsuario()}" />
       				</li>
       			
       				<li> 
-      					<span> Descrição pessoal: </span> getDescrição ();
+      					<span> Descrição pessoal: </span>  
+      					<h:outputText value="#{auth.usuario.getDescricao()}" />
       				</li>     			
       			</ul>     		
       		</div>      		

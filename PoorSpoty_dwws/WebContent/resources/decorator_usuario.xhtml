@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      >
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="#{facesContext.externalContext.requestContextPath}/resources/PoorSpoty_Style.css" rel="stylesheet" type="text/css" />
@@ -28,7 +30,10 @@
 						<ul>
 							<li> <a href="#{facesContext.externalContext.requestContextPath}/pag_usuario/inicio.faces"> Início </a> </li>
 							<li> <a href="#{facesContext.externalContext.requestContextPath}/pag_usuario/ajuda.faces"> Ajuda </a> </li>
-							<li> <a href="#"> Sair </a> </li>
+							
+							<li> 
+								<a href="#{facesContext.externalContext.requestContextPath}/index.faces"> Sair </a>
+							</li>
 								
 						</ul>	
 					</div>
@@ -46,41 +51,33 @@
 	
 	<ui:insert name="parteInferiorUsuario">	
 		<div class="boxBordaClear">				
-		</div>
+		</div>	
 	
-		<div id="boxRankings">	
-			<div id="boxRankingBandas">
-				<h2> Top 5 bandas PoorSpoty: </h2>
-				<ol>
-					<li> getBanda1 (); </li>
-					<li> getBanda2 (); </li>
-					<li> getBanda3 (); </li>
-					<li> getBanda4 (); </li>
-					<li> getBanda5 (); </li>		
-				</ol>
-			</div>
-		
-			<div id="boxRankingEstilos">
-				<h2> Top 5 estilos PoorSpoty: </h2>		
-				<ol>
-					<li> getEstilo1 (); </li>
-					<li> getEstilo2 (); </li>
-					<li> getEstilo3 (); </li>
-					<li> getEstilo4 (); </li>
-					<li> getEstilo5 (); </li>		
-				</ol>		
-			</div>	
-		
-		 </div>
-		 
-		 <div class="boxBordaClear">				
-		 </div>
-		
 		<div id="boxSugestao">
 			<h:form>
-				<h:commandLink action="/pag_usuario/construcao.faces" value="Me sugira algo novo" />
+				<h:commandLink action="#{auth.getMinhasBandas()}" value="Minhas Bandas" onclick="mostrar()" />				
+												
+			</h:form>
+			
+			<h:form>
+				<h:commandLink action="#{auth.goSugestao()}" value="Me sugira algo novo" onclick="mostrar()" />
 			</h:form>		
-				
+			
+			<br></br>
+			<br></br>
+			<img src="#{facesContext.externalContext.requestContextPath}/resources/imagens/loading.gif"
+					id = "loading" style = "display: none; width: 235px; height: 22px;"
+		 	/>
+		 	
+		 	<script type="text/javascript">
+		 		function mostrar() {
+		 			document.getElementById("loading").style.display = "block";
+		 		}
+		 	</script>
+
+		 	
+		 	
+			
 		</div>
 		
 		<div class="boxBordaClear">				

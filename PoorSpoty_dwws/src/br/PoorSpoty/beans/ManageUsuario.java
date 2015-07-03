@@ -33,12 +33,11 @@ public class ManageUsuario implements Serializable{
 	@EJB
 	UsuarioDAO usuarioDAO;
 	DataModel<Usuario> usuarios;
-	Usuario usuario;
+	Usuario usuario = new Usuario();
 	
 	@EJB
 	EstiloMusicalDAO estiloMusicalDAO;
 	private List<EstiloMusical> estilos;
-
 	
 	@EJB
 	BandaDAO bandaDAO;
@@ -54,11 +53,27 @@ public class ManageUsuario implements Serializable{
 	private String banda = new String();	
 	private List<String> bandas = new ArrayList<String>();
 	
+	private List<Integer> avatars = new ArrayList<Integer>();	
+	
 	// ###################  INICIO GETTERS E SETTERS ###################
+	
+	public ManageUsuario() {
+		super();
+		for (int i=1; i<21; i++){
+			avatars.add(i);
+		}		
+	}
+	public List<Integer> getAvatars() {
+		return avatars;
+	}
+	public void setAvatars(List<Integer> avatars) {
+		this.avatars = avatars;
+	}	
 	
 	public Usuario getUsuario() {
 		return usuario;
 	}
+
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
@@ -131,7 +146,11 @@ public class ManageUsuario implements Serializable{
 			this.usuario.setBandas(listStringToListBanda(this.bandas));			
 			this.usuario.setEstilos(listStringToListEstilo(this.estilosCurtidos));
 			this.usuario.setEstilosNao(listStringToListEstilo(this.estilosNaoCurtidos));	
-			
+						
+			estilosCurtidos.clear();
+			estilosNaoCurtidos.clear();
+			bandas.clear();
+		
 			//this.usuario.printUsuario();
 			
 			this.usuarioDAO.salvar(usuario);
@@ -140,6 +159,25 @@ public class ManageUsuario implements Serializable{
 		}
 		return "/manage/manageUsuario/listar_usuarios";
 	}
+	
+	public String salvar2 (){
+		try{
+			this.usuario.setBandas(listStringToListBanda(this.bandas));			
+			this.usuario.setEstilos(listStringToListEstilo(this.estilosCurtidos));
+			this.usuario.setEstilosNao(listStringToListEstilo(this.estilosNaoCurtidos));	
+			
+			//this.usuario.printUsuario();
+			
+			estilosCurtidos.clear();
+			estilosNaoCurtidos.clear();
+			bandas.clear();
+			
+			this.usuarioDAO.salvar(usuario);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return "sucessoCadastro";
+	}	
 	
 	public void excluir(){
 		Long idUsuario = ((Usuario)this.usuarios.getRowData()).getId();
@@ -258,4 +296,6 @@ public class ManageUsuario implements Serializable{
 	    }  
 		return estilosL;		
 	}	
+	
+	
 }

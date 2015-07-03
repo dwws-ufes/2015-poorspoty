@@ -20,7 +20,9 @@
 					
 					<div id="menuCabecalhoUsuario">
 						<ul>							
-							<li> <a href="#"> Sair </a> </li>								
+							<li> 
+								<a href="#{facesContext.externalContext.requestContextPath}/index.faces"> Sair </a>
+							</li>								
 						</ul>	
 					</div>				
 			</div>
@@ -42,7 +44,11 @@
 			 
 			    <p:column headerText="Estilo">
 			        <h:outputText value="#{banda.estilo.nome}" />
-			    </p:column>	
+			    </p:column>
+			    
+			    <p:column headerText="Tipo">
+			        <h:outputText value="#{banda.tipo}" />
+			    </p:column>		
 			    
 			    <p:column headerText="">
 			        <h:form class="formLogin">
